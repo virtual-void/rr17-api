@@ -11,21 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529113604) do
-
+ActiveRecord::Schema.define(version: 20_170_529_113_604) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "source_providers", force: :cascade do |t|
-    t.string   "name",         null: false
-    t.string   "url",          null: false
-    t.string   "address",      null: false
-    t.datetime "last_sync_at", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table 'source_providers', force: :cascade do |t|
+    t.string 'name',         null: false
+    t.string 'url',          null: false
+    t.string 'address',      null: false
+    t.datetime 'last_sync_at', null: false
+    t.datetime 'created_at',   null: false
+    t.datetime 'updated_at',   null: false
   end
 
-  add_index "source_providers", ["name"], name: "index_source_providers_on_name", unique: true, using: :btree
-  add_index "source_providers", ["url"], name: "index_source_providers_on_url", unique: true, using: :btree
-
+  add_index 'source_providers', ['name'], name: 'index_source_providers_on_name', unique: true, using: :btree
+  add_index 'source_providers', ['url'], name: 'index_source_providers_on_url', unique: true, using: :btree
 end
